@@ -4,8 +4,8 @@ import { initVelarisBackground } from '/velaris.js';
 
 // Initialize animated hero background
 initVelarisBackground('heroBg', {
-  bg: '#1a1a2e',
-  colors: ['#8b5cf6', '#6b4dde', '#4c1d95', '#1a1a2e'],
+  bg: '#0a0a0f',
+  colors: ['#8b5cf6', '#6366f1', '#06b6d4', '#0a0a0f'],
   speed: 1.5,
   grain: 0.25,
 });
