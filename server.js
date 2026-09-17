@@ -227,14 +227,40 @@ function safeParseJson(text) {
   if (start !== -1 && end !== -1 && end > start) {
     t = t.slice(start, end + 1);
   }
-  return JSON.parse(t);
+  
+  // Try parsing as-is first
+  try {
+    return JSON.parse(t);
+  } catch (err) {
+    // If parsing fails, try to fix truncated JSON by closing open brackets
+    const openBraces = (t.match(/{/g) || []).length;
+    const closeBraces = (t.match(/}/g) || []).length;
+    const openBrackets = (t.match(/\[/g) || []).length;
+    const closeBrackets = (t.match(/\]/g) || []).length;
+    
+    // Remove trailing comma if present
+    t = t.replace(/,\s*$/, '');
+    
+    // Close any open brackets/braces
+    const bracesDiff = openBraces - closeBraces;
+    const bracketsDiff = openBrackets - closeBrackets;
+    
+    if (bracketsDiff > 0) {
+      t += ']'.repeat(bracketsDiff);
+    }
+    if (bracesDiff > 0) {
+      t += '}'.repeat(bracesDiff);
+    }
+    
+    return JSON.parse(t);
+  }
 }
 
 async function generateQuiz({ notes, count, difficulty }) {
   const history = buildQuizPrompt({ notes, count, difficulty });
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
-      const text = await runCompletion(history, 1200);
+      const text = await runCompletion(history, 2000);
       const parsed = safeParseJson(text);
       if (
         parsed &&
