@@ -98,10 +98,40 @@ els.uploadBtn.addEventListener('click', () => els.fileInput.click());
 els.fileInput.addEventListener('change', async (e) => {
   const file = e.target.files?.[0];
   if (!file) return;
-  const txt = await file.text();
-  els.notesInput.value = txt;
-  updateCounts();
   els.fileInput.value = '';
+
+  if (file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')) {
+    const origLabel = els.uploadBtn.textContent;
+    els.uploadBtn.disabled = true;
+    els.uploadBtn.textContent = 'Reading PDF…';
+    try {
+      const arrayBuf = await file.arrayBuffer();
+      const base64 = btoa(String.fromCharCode(...new Uint8Array(arrayBuf)));
+      const res = await fetch('/api/parse-pdf', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ pdf: base64 }),
+      });
+      const data = await res.json().catch(() => ({ ok: false, error: 'Bad response.' }));
+      if (!res.ok || !data.ok) throw new Error(data.error || `HTTP ${res.status}`);
+      if (!data.text || !data.text.trim()) {
+        throw new Error('No text could be extracted from this PDF. It may be scanned/image-based.');
+      }
+      els.notesInput.value = data.text;
+      updateCounts();
+      els.notesInput.focus();
+    } catch (err) {
+      alert('PDF upload failed: ' + (err.message || err));
+    } finally {
+      els.uploadBtn.disabled = false;
+      els.uploadBtn.textContent = origLabel;
+    }
+  } else {
+    const txt = await file.text();
+    els.notesInput.value = txt;
+    updateCounts();
+    els.notesInput.focus();
+  }
 });
 
 els.clearBtn.addEventListener('click', () => {

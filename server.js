@@ -1,12 +1,16 @@
 import express from 'express';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createRequire } from 'node:module';
 import {
   loadModel,
   completion,
   close,
   QWEN3_1_7B_INST_Q4,
 } from '@qvac/sdk';
+
+const require = createRequire(import.meta.url);
+const pdfParse = require('pdf-parse');
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -269,7 +273,7 @@ async function generateQuiz({ notes, count, difficulty }) {
 // ---------------------------------------------------------------------------
 // HTTP setup
 // ---------------------------------------------------------------------------
-app.use(express.json({ limit: '4mb' }));
+app.use(express.json({ limit: '10mb' }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Live model-download / readiness stream.
@@ -397,6 +401,27 @@ app.post('/api/explain', async (req, res) => {
 
 // Simple health check.
 app.get('/api/health', (_req, res) => res.json({ ok: true }));
+
+// PDF text extraction — accepts base64-encoded PDF, returns plain text.
+app.post('/api/parse-pdf', async (req, res) => {
+  const base64 = (req.body?.pdf ?? '').toString();
+  if (!base64) {
+    return res.status(400).json({ ok: false, error: 'No PDF data provided.' });
+  }
+  try {
+    const buffer = Buffer.from(base64, 'base64');
+    const data = await pdfParse(buffer);
+    res.json({
+      ok: true,
+      text: data.text,
+      pages: data.numpages,
+      info: data.info,
+    });
+  } catch (err) {
+    console.error('[studylocal] pdf parse failed:', err?.message || err);
+    res.status(500).json({ ok: false, error: 'Failed to parse PDF. The file may be corrupted or password-protected.' });
+  }
+});
 
 const server = app.listen(PORT, () => {
   console.log('');
