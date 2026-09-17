@@ -1,0 +1,58 @@
+Cell Biology — Chapter 7: Mitochondria and Cellular Respiration
+
+1. Introduction to Mitochondria
+Mitochondria are double-membrane organelles found in nearly all eukaryotic cells. They are often called the "powerhouse of the cell" because they generate most of the cell's supply of adenosine triphosphate (ATP), which is used as a source of chemical energy. A typical mammalian cell contains between 1,000 and 2,000 mitochondria.
+
+2. Structure of Mitochondria
+Mitochondria have two distinct membranes:
+- Outer membrane: smooth and contains many copies of the transport protein porin, which forms channels that allow small molecules to pass freely.
+- Inner membrane: highly folded into cristae, which increase the surface area for chemical reactions. The inner membrane contains the protein complexes of the electron transport chain.
+
+Between the two membranes is the intermembrane space. Inside the inner membrane is the mitochondrial matrix, a gel-like substance that contains enzymes, mitochondrial DNA (mtDNA), and ribosomes.
+
+3. Mitochondrial DNA
+Unlike most other organelles, mitochondria contain their own circular DNA and ribosomes. Human mitochondrial DNA encodes 37 genes: 13 for proteins of the electron transport chain, 22 for mitochondrial tRNA, and 2 for rRNA. Mitochondrial DNA is inherited exclusively from the mother.
+
+4. Cellular Respiration Overview
+Cellular respiration is the process by which cells break down glucose (C6H12O6) in the presence of oxygen to produce ATP. The overall equation is:
+C6H12O6 + 6 O2 → 6 CO2 + 6 H2O + ATP (energy)
+
+The process occurs in three main stages:
+- Glycolysis (in the cytoplasm)
+- The Krebs cycle / Citric acid cycle (in the mitochondrial matrix)
+- Oxidative phosphorylation / Electron transport chain (on the inner mitochondrial membrane)
+
+5. Glycolysis
+Glycolysis takes place in the cytoplasm and does not require oxygen. It splits one glucose molecule into two pyruvate molecules, producing a net gain of 2 ATP and 2 NADH. Glycolysis has 10 enzymatic steps catalysed by 10 different enzymes.
+
+6. The Krebs Cycle
+The Krebs cycle (also called the citric acid cycle or TCA cycle) takes place in the mitochondrial matrix. Before entering the cycle, pyruvate is converted into acetyl-CoA. Each turn of the Krebs cycle produces:
+- 3 NADH
+- 1 FADH2
+- 1 ATP (or GTP)
+- 2 CO2
+
+The cycle has 8 enzymatic steps and was discovered by Hans Krebs in 1937, for which he won the Nobel Prize in 1953.
+
+7. Electron Transport Chain and Oxidative Phosphorylation
+The electron transport chain is a series of four protein complexes (I, II, III, IV) embedded in the inner mitochondrial membrane. NADH and FADH2 donate electrons to the chain. As electrons pass through the complexes, protons (H+) are pumped from the matrix into the intermembrane space, creating an electrochemical gradient called the proton-motive force.
+
+ATP synthase, a rotary motor enzyme, uses this gradient to phosphorylate ADP into ATP. Approximately 26-28 ATP molecules are produced per glucose molecule through oxidative phosphorylation. Oxygen acts as the final electron acceptor, combining with electrons and protons to form water.
+
+8. ATP Yield
+The total ATP yield from one glucose molecule is approximately 30-32 ATP:
+- 2 ATP from glycolysis
+- 2 ATP from the Krebs cycle
+- 26-28 ATP from oxidative phosphorylation
+
+9. Anaerobic Respiration
+In the absence of oxygen, cells can perform fermentation. In animal cells, pyruvate is converted to lactate (lactic acid fermentation), regenerating NAD+ so glycolysis can continue. In yeast and some plant cells, pyruvate is converted to ethanol and CO2 (alcoholic fermentation).
+
+10. Clinical Significance
+Mitochondrial dysfunction is implicated in numerous diseases, including:
+- Leber's hereditary optic neuropathy (LHON) — causes sudden vision loss
+- MELAS syndrome (Mitochondrial Encephalomyopathy, Lactic Acidosis, Stroke-like episodes)
+- Parkinson's disease — linked to complex I dysfunction
+- Some forms of diabetes
+
+Key terms: ATP, mitochondria, matrix, cristae, intermembrane space, glycolysis, Krebs cycle, electron transport chain, ATP synthase, NADH, FADH2, proton-motive force, oxidative phosphorylation, fermentation, mitochondrial DNA.
