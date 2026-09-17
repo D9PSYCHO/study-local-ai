@@ -1,0 +1,15 @@
+node_modules/
+.qvac/
+*.gguf
+.env
+.env.*
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+.vscode/
+.idea/
+*.swp
+*.swo
+coverage/
+.nyc_output/

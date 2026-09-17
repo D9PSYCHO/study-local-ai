@@ -1,0 +1,33 @@
+{
+  "name": "study-local-ai",
+  "version": "1.0.0",
+  "description": "StudyLocal — a private, on-device AI study assistant built on the QVAC SDK. Upload your own notes and get multiple-choice quizzes, summaries and explanations generated locally by Qwen3 — nothing leaves your machine.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "qvac",
+    "on-device-ai",
+    "study-assistant",
+    "local-llm",
+    "qwen3",
+    "quiz-generator",
+    "rag",
+    "offline-ai",
+    "privacy",
+    "education"
+  ],
+  "author": "Farhan",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@qvac/sdk": "^0.19.1",
+    "bare-runtime-win32-x64": "^1.33.4",
+    "express": "^4.21.2"
+  }
+}
