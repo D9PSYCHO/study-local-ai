@@ -63,9 +63,9 @@ function setMode(mode) {
   els.optsExplain.classList.toggle('hidden', mode !== 'explain');
 
   const labels = {
-    quiz: { btn: 'Generate quiz', hint: 'Runs on-device · ~10–30s for 5 questions' },
-    summary: { btn: 'Summarise notes', hint: 'Runs on-device · ~10–25s' },
-    explain: { btn: 'Explain', hint: 'Runs on-device · ~10–25s' },
+    quiz: { btn: 'Generate quiz', hint: 'Runs on-device · ~5–15s for 3 questions' },
+    summary: { btn: 'Summarise notes', hint: 'Runs on-device · ~5–15s' },
+    explain: { btn: 'Explain', hint: 'Runs on-device · ~5–15s' },
   };
   els.runLabel.textContent = labels[mode].btn;
   els.runHint.textContent = labels[mode].hint;

@@ -234,7 +234,7 @@ async function generateQuiz({ notes, count, difficulty }) {
   const history = buildQuizPrompt({ notes, count, difficulty });
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
-      const text = await runCompletion(history, 1800);
+      const text = await runCompletion(history, 1200);
       const parsed = safeParseJson(text);
       if (
         parsed &&
