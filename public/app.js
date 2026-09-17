@@ -1,5 +1,15 @@
 // StudyLocal — on-device AI study assistant frontend.
 
+import { initVelarisBackground } from '/velaris.js';
+
+// Initialize animated hero background
+initVelarisBackground('heroBg', {
+  bg: '#1a1a2e',
+  colors: ['#8b5cf6', '#6b4dde', '#4c1d95', '#1a1a2e'],
+  speed: 1.5,
+  grain: 0.25,
+});
+
 const els = {
   statusPill: document.getElementById('statusPill'),
   statusText: document.getElementById('statusText'),

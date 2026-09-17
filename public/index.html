@@ -35,13 +35,15 @@
 
     <main class="wrap">
       <section class="hero">
-        <h1>Study smarter, <em>locally</em>.</h1>
-        <p class="lede">
-          Paste your class notes and turn them into <strong>quizzes</strong>,
-          <strong>summaries</strong> and <strong>explanations</strong> — generated
-          on your machine by a local language model. No cloud, no API key,
-          your notes never leave the device.
-        </p>
+        <canvas id="heroBg" aria-hidden="true"></canvas>
+        <div class="hero-content">
+          <h1>Study smarter, <em>locally</em>.</h1>
+          <p class="lede">
+            Paste your class notes and turn them into <strong>quizzes</strong>,
+            <strong>summaries</strong> and <strong>explanations</strong> — generated
+            on your machine by a local language model. No cloud, no API key,
+            your notes never leave the device.
+          </p>
         <div class="badges">
           <span class="badge">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -55,6 +57,7 @@
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
             Qwen3 1.7B · Q4
           </span>
+        </div>
         </div>
       </section>
 
@@ -200,6 +203,7 @@
       Built with the <a href="https://qvac.tether.io" target="_blank" rel="noopener">QVAC SDK</a> · Apache-2.0
     </footer>
 
+    <script src="/velaris.js" type="module"></script>
     <script src="/app.js" type="module"></script>
   </body>
 </html>

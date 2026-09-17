@@ -29,6 +29,6 @@
     "@qvac/sdk": "^0.19.1",
     "bare-runtime-win32-x64": "^1.33.4",
     "express": "^4.21.2",
-    "pdf-parse": "^2.4.5"
+    "pdf-parse": "^1.1.1"
   }
 }
